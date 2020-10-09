@@ -71,8 +71,8 @@ guard :rspec, cmd: "bundle exec rspec" do
   dsl.watch_spec_files_for(rails.views)
 
   #if a change is made to app/controllers or app/models test in spec/features are ran
-  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { "spec/features" }
-  watch(%r{^app/models/(.+)\.rb$})  { "spec/features" }
+  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { "spec" }
+  watch(%r{^app/models/(.+)\.rb$})  { "spec" }
   watch(rails.controllers) do |m|
     [
       rspec.spec.call("routing/#{m[1]}_routing"),
@@ -87,7 +87,7 @@ guard :rspec, cmd: "bundle exec rspec" do
   watch(rails.app_controller)  { "#{rspec.spec_dir}/controllers" }
 
   # Capybara features specs
-  watch(rails.view_dirs)     {"spec/features"}#{ |m| rspec.spec.call("features/#{m[1]}") }
+  watch(rails.view_dirs)     {"spec"}#{ |m| rspec.spec.call("features/#{m[1]}") }
   watch(rails.layouts)       { |m| rspec.spec.call("features/#{m[1]}") }
 
   # Turnip features and steps
