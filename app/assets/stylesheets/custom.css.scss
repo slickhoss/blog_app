@@ -5,36 +5,63 @@ body {
     padding-top: 60px;
     background: #e1e1e1;
     color: #64103f;
-      
-      .navbar {
-       background: #64103F;
-      }
-      
-      .navbar-default .navbar-brand {
-        padding-top: 25px;
-        font-size: 150%;
-        font-weight: bold;
-        color: #ffffff;
-      }
-      
-      .navbar-default .navbar-brand:hover {
-      }
-      
-      .navbar-default {
-        border: #64103F;
-      }
-      
-      .navbar-nav {
-        padding-top: 10px;
-        padding-right: 20px;
-      }
-      
-      .navbar-default .navbar-nav li > a {
-        font-weight: bold;
-        font-size: 130%;
-        color: #ffffff;
-      }
-      
-      .navbar-default .navbar-nav li > a:hover {
-       }
+}      
+.navbar {
+  background: #64103F;
+  padding-bottom: 10px;
+}
+
+.navbar-default .navbar-brand {
+  padding-top: 25px;
+  font-size: 150%;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover {
+}
+
+.navbar-default {
+  border: #64103F;
+}
+
+.navbar-nav {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.navbar-default .navbar-nav li > a {
+  font-weight: bold;
+  font-size: 130%;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav li > a:hover {
+}
+
+#new-article-button{
+  margin-bottom: 10px;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 0.8em;
+  padding-left: 0.7em;
+}
+
+.article-body{
+  font-size: 1em;
+  padding-left: 1.2em;
+  color: #64103F;
+}
+
+.author {
+  color: #64103f;
+  padding-left: 25px;
+}
+
+.article-detail {
+  margin-top: 20px;
+  color: #0000ff;
 }

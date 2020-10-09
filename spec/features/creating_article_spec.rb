@@ -12,8 +12,7 @@ RSpec.feature "Creating Articles" do
         expect(page).to have_content("Article has been created")
         expect(page.current_path).to eq(articles_path)
     end
-
-
+    
     scenario 'A user fails to create a new article' do
         visit '/'
         click_link 'New Article'
