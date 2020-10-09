@@ -1,3 +1,15 @@
-<h1>this is the show page</h1>
-<%= @article.title %>
-<%= @article.body %>
+<article class='detail-article'>
+    <div class='well well-lg'>
+        <h1 class='article-detail-title text-primary'>
+            <%= @article.title %>
+        </h1>
+
+        <div class='glyphicon glyphicon-calender' id='article-date'>
+            <%= @article.created_at.strftime("%b %d %Y")%>
+        </div> <br>
+        
+        <div class='article-body'>
+            <%= @article.body %>
+        </div>
+    </div>
+</article class>
