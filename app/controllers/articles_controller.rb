@@ -16,11 +16,11 @@ class ArticlesController < ApplicationController
             redirect_to articles_path
             flash[:success] = "Article has been created"
         else
-            flash[:danger] = 'Article has not been created'
+            #flash[:danger] = 'Article has not been created'
             render :new
         end
     end
-    
+
     private
         def article_params
             params.require(:article).permit(:title, :body)
