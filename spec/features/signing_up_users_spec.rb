@@ -20,7 +20,7 @@ RSpec.feature 'Sign Up Users' do
         click_link 'Sign Up'
         fill_in 'Email', with: 'demo@example.com'
         fill_in 'Password', with: ''
-        fill_in 'Password confirmation': ''
+        fill_in 'Password confirmation', with: ''
         click_button 'Sign up'
 
         #expect(page).to have_content('Registration Errors')
