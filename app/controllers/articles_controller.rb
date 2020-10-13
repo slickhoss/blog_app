@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
     end
 
     def show
+        @comments = @article.comments.all
+        @comment = @article.comments.build
     end
 
     def new
@@ -26,22 +28,36 @@ class ArticlesController < ApplicationController
     end
 
     def edit
+        unless @article.user == current_user
+            flash[:alert] = 'You can only edit your own article.'
+            redirect_to root_path
+        end
     end
 
     def update
-        if @article.update(article_params)
-            redirect_to @article
-            flash[:success] = 'Article has been updated'
+        unless @article.user == current_user
+            flash[:alert] = 'You can only edit your own article.'
+            redirect_to root_path
         else
-            flash[:danger] = 'Article has not been updated'
-            render :edit
+            if @article.update(article_params)
+                redirect_to @article
+                flash[:success] = 'Article has been updated'
+            else
+                flash[:danger] = 'Article has not been updated'
+                render :edit
+            end
         end
     end
 
     def destroy
-        @article.destroy
-        flash[:success] = 'Article successfully deleted'
-        redirect_to articles_path
+        unless @article.user == current_user
+            flash[:alert] = 'You can only delete your own articles.'
+            redirect_to root_path
+        else
+            @article.destroy
+            flash[:success] = 'Article successfully deleted'
+            redirect_to root_path
+        end
     end
 
     protected
